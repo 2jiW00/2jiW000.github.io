@@ -43,17 +43,19 @@ ga('send', 'pageview');
 
 <!-- Begin Menu Navigation
 ================================================== -->
+<!-- 지우의 연구노트: 뉴닉 스타일 상단바 시작 -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
     <div class="container pr-0">
-        <!-- 1. 로고와 사이트 제목 (그림 2 스타일) -->
+        
+        <!-- 1. 로고와 제목 -->
         <a class="navbar-brand" href="{{ site.baseurl }}/">
             <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
             <span style="font-weight:bold; font-size:20px; color:#333; margin-left:10px;">지우의 연구노트</span>
         </a>
 
-        <!-- 2. 제목 옆 검색창 (뉴닉 스타일) -->
+        <!-- 2. 뉴닉형 검색창 (제목 바로 옆) -->
         <div class="search-container ml-3 d-none d-md-block">
-            <input type="text" id="search-input" placeholder="분야, 태그 검색..." style="border-radius:20px; border:1px solid #ddd; padding:5px 15px; width:250px;">
+            <input type="text" id="search-input" placeholder="분야, 태그 검색..." style="border-radius:20px; border:1px solid #ddd; padding:5px 15px; width:220px;">
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish">
@@ -61,21 +63,26 @@ ga('send', 'pageview');
         </button>
 
         <div class="collapse navbar-collapse" id="navbarMediumish">
-            <!-- 3. 오른쪽 분야별 카테고리 메뉴 (눌렀을 때 파란색 원형 강조용) -->
+            <!-- 3. 분야별 카테고리 (우측 정렬) -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link cat-btn" href="{{ site.baseurl }}/category/theory">#반도체원리</a>
                 </li>
                 <li class="nav-item">
+                    <!-- 현재 '화학'이 선택된 것처럼 청록색 강조 -->
                     <a class="nav-link cat-btn active-teal" href="{{ site.baseurl }}/category/chemistry">화학</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link cat-btn" href="{{ site.baseurl }}/category/physics">물리학</a>
                 </li>
+                <!-- 기존 검색 기능 연결 (lunr) -->
+                {% include search-lunr.html %}
             </ul>
         </div>
+        
     </div>
 </nav>
+<!-- 상단바 끝 -->
 <!-- End Navigation
 ================================================== -->
 
