@@ -44,61 +44,36 @@ ga('send', 'pageview');
 <!-- Begin Menu Navigation
 ================================================== -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
-
     <div class="container pr-0">
+        <!-- 1. 로고와 사이트 제목 (그림 2 스타일) -->
+        <a class="navbar-brand" href="{{ site.baseurl }}/">
+            <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
+            <span style="font-weight:bold; font-size:20px; color:#333; margin-left:10px;">지우의 연구노트</span>
+        </a>
 
-    <!-- Begin Logo -->
-    <a class="navbar-brand" href="{{ site.baseurl }}/">
-    <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
-    </a>
-    <!-- End Logo -->
+        <!-- 2. 제목 옆 검색창 (뉴닉 스타일) -->
+        <div class="search-container ml-3 d-none d-md-block">
+            <input type="text" id="search-input" placeholder="분야, 태그 검색..." style="border-radius:20px; border:1px solid #ddd; padding:5px 15px; width:250px;">
+        </div>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarMediumish">
-
-        <!-- Begin Menu -->
-
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            <!-- 3. 오른쪽 분야별 카테고리 메뉴 (눌렀을 때 파란색 원형 강조용) -->
             <ul class="navbar-nav ml-auto">
-
-                {% if page.url == "/" %}
-                <li class="nav-item active">
-                {% else %}
                 <li class="nav-item">
-                {% endif %}
-                <a class="nav-link" href="{{ site.baseurl }}/index.html">Blog</a>
+                    <a class="nav-link cat-btn" href="{{ site.baseurl }}/category/theory">#반도체원리</a>
                 </li>
-
                 <li class="nav-item">
-                <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
+                    <a class="nav-link cat-btn active-teal" href="{{ site.baseurl }}/category/chemistry">화학</a>
                 </li>
-
                 <li class="nav-item">
-                <a target="_blank" class="nav-link" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/"> Docs</a>
+                    <a class="nav-link cat-btn" href="{{ site.baseurl }}/category/physics">물리학</a>
                 </li>
-
-                <li class="nav-item">
-                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-wordpress/"><i class="fab fa-wordpress-simple"></i> WP Version</a>
-                </li>
-
-                <li class="nav-item">
-                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-ghost/"><i class="fab fa-snapchat-ghost"></i> Ghost Version</a>
-                </li>
-
-                <li class="nav-item">
-                <a target="_blank" class="nav-link" href="https://github.com/wowthemesnet/mediumish-theme-jekyll"><i class="fab fa-github"></i> Fork on Github</a>
-                </li>
-
-                {% include search-lunr.html %}
-
             </ul>
-
-        <!-- End Menu -->
-
-    </div>
-
+        </div>
     </div>
 </nav>
 <!-- End Navigation
