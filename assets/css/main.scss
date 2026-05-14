@@ -13,3 +13,17 @@
 	"syntax",
     "starsnonscss"
 ;
+/* 화학 메뉴가 눌러졌을 때처럼 파란색 동그라미 표시 */
+.active-teal {
+    background-color: #20B2AA !important; /* 지우 님이 원한 청록색 */
+    color: white !important;
+    border-radius: 20px;
+    padding: 5px 15px !important;
+    box-shadow: 0 4px 8px rgba(32, 178, 170, 0.3);
+}
+
+/* 마우스를 올렸을 때 효과 */
+.cat-btn:hover {
+    color: #20B2AA;
+    transition: 0.3s;
+}
